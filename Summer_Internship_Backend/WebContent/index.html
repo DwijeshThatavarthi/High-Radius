@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+        <title>High Radius</title>
+        <link rel="stylesheet" href="css/queen.css">
+        
+    </head>
+    <body>
+        <header>
+            <div><img src="images/ABC.svg" alt="ABC Products" width="300px" height="52px" style="margin-left: 20px;">
+            <img class="a3" src="images/HighRadius_Logo.svg" alt="High Radius" height="50px" width="235px" >
+            </div>
+        </header>
+        <p class="invoice">Invoice List</p>
+            <div class="box">
+        <div>
+            <input type="text" id="search" class="search" placeholder="Search by Invoice Number" onkeyup="search()" name="search">
+            <button class="del" id="del" onclick="">-  Delete</button>
+            <button class="edit" id="edit" onclick="" >&#128393;&nbsp; Edit</button>
+            <button type="submit" class="add" id="add" onclick="">+ Add</button><br><br><br><br>
+        </div>
+
+        <div class="">
+            <button class="btnl" id="btnl" onclick="pagedecrement()">&#10094;</button>
+
+            <div class="popadd" >
+                <div class="popadd-con">
+                    <div class="addinv">
+                    <header class="popah">Add Invoice</header>
+                    </div>
+                    <form action="" class="formadd" id="formadd">
+                        <div class="leftform">
+                            <label for="custa">Customer Name<span style="color: #FF5B5B;margin-right: 6px;">*</span></label>
+                            <input type="text" name="custa" required style="color: white;font-size: 18px;"><br>
+                            <label for="cnoa">Customer No.<span style="color: #FF5B5B;margin-right: 28px;">*</span></label>
+                            <input type="text" name="cnoa" required style="color: white;font-size: 18px;"><br>
+                            <label for="ivna">Invoice No.<span style="color: #FF5B5B;margin-right: 53px;">*</span></label>
+                            <input type="text" name="inva" required style="color: white;font-size: 18px;"><br>
+                            <label for="inaa">Invoice Amount<span style="color: #FF5B5B;margin-right: 10px;">*</span></label>
+                            <input type="text" name="inna" required style="color: white;font-size: 18px;">
+                            </div>
+                            <div class="rightform">
+                            <label for="datea">Due Date<span style="color: #FF5B5B;margin-right: 40px;">*</span></label>
+                            <input type="date" name="datea" required style="margin-right: 16px;color: white;"><br>
+                            <label for="notesa" class="notes" >Notes</label>
+                            <textarea name="notesa" class="notesa" style="color: white;font-size: 18px;"></textarea>
+                        </div>
+                        <div class="addfooter">
+                            <button id="cancel" class="cancel" onclick="">Cancel</button>
+                            <button onclick="" class="addb" style="float: right">Add</button>
+                            <input type="reset" onclick="" class="clear" style="float: right;width: 87px;margin-top:25px;border: 1px solid #14AFF1;color: white;background-color: #2A3E4C;font-size: 20px;" value="Clear">
+
+                        </div>
+                    </form>   
+                </div>
+            </div>
+
+<div class="popdel">
+      <div class="popdel-con">
+        <div class="popdh">
+          <header>Delete record(s)?</header>
+        </div>
+        <div class="pdel">
+          <p>
+            You'll lose your record(s) after this action. We can't recover them
+            once you delete. <br /><br />
+            Are you sure you want to
+            <span style="color: #ff5e5e; font-size: 20px"
+              >permanently delete</span
+            >
+            them?
+          </p>
+        </div>
+        <form class="butdel" id ="delsub">
+          <button type="submit" class="bdel" id="bdel">Delete</button>
+          <button type ="button" class="cancdel" id="cancdel">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+            <div class="popedit">
+                <div class="popedit-con">
+                    <div class="popeh">
+                        <header>Edit Invoice</header>
+                    </div>
+                    <div class=pedit>
+                        <form action="" class="editform" id="editform">
+                            <label for="ia" class="ia">Invoice Amount</label>
+                            <input type="text" name="ia" class="iat" style="color: white; font-size: 20px;"> <br>
+                            <label for="nd" class="nd">Notes</label>
+                            <textarea name="nd"  class="ndt" id="ndt" style="color: white; font-size: 20px;"></textarea>
+                            <div class="butedit">
+                                <button class="cancedit" id="cancedit">Cancel</button> 
+                                
+                                <button class="bedit" id="bedit" onclick="none1()">Save</button>
+                                <button type="reset" class="resetedit" id="resetedit">Reset</button>                          
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>                
+            </div>
+            <table class="table" style="border-collapse:collapse ">
+                <tr>
+                  <th class="head"><input onclick="allcheck(this)" type="checkbox" id="checkbox1"style="margin-right:20px;"> Customer Name</th>
+                  <th class="head">Customer #</th>
+                  <th class="head">Invoice #</th>
+                  <th class="head">Invoice Amount</th>
+                  <th class="head">Due date</th>
+                  <th class="head">Predicted Payment Date</th>
+                  <th class="head" style='padding-right: 200px;'>Notes</th>
+                </tr>
+                <tbody id='myTable'></tbody> 
+
+              </table>
+              <button class="btnr" id="btnr" onclick="pageincrement()">&#10095;</button>
+            </div>
+
+            
+        </div>     
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>      
+        <script src="js/soldier.js"></script>
+        
+    </body>
+</html>
